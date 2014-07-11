@@ -11,7 +11,6 @@ Demo: http://d3kks39dujnhya.cloudfront.net/
 
 #### Source
 
-
 https://github.com/kriasoft/static-site-starter
 
 #### Documentation
@@ -39,7 +38,11 @@ by running:
 > gulp deploy
 ```
 
-
 #### Credits
 
  - Konstantin Tarkus -- [@koistya](https://twitter.com/koistya)
+
+#### Support
+
+Have questions or need help? Contact me via email [hello@tarkus.me](mailto:hello@tarkus.me)
+or Skype: koistya.
