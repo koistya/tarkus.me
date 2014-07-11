@@ -11,6 +11,10 @@ Demo: http://d3kks39dujnhya.cloudfront.net/
 
 https://github.com/kriasoft/static-site-starter
 
+#### Documentation
+
+ * [FAQ](./docs/faq.md)
+
 #### Blogs & Articles
 
  - [Static website on S3, CloudFront and Route 53, the right way!](http://www.michaelgallego.fr/blog/2013/08/27/static-website-on-s3-cloudfront-and-route-53-the-right-way/)
@@ -24,7 +28,7 @@ https://github.com/kriasoft/static-site-starter
 #### How to Deploy
 
 If Travis CI is watching this repo, it will deploy the site automatically after
-the build. Otherwise, you may deploy manually by running:
+each commit. Otherwise, you may deploy it manually by running:
 
 ```
 > gulp deploy
