@@ -1,15 +1,14 @@
-## Static Site Starter Kit
+## Static Site Demo
 
-> This is a static site project template powered by [Gulp](http://gulpjs.com/),
+> This is a static site demo project powered by [Gulp](http://gulpjs.com/),
 > [Bootstrap](http://getbootstrap.com/), [LESS](http://lesscss.org/); and
 > configured for deployment to [Amazon S3](http://aws.amazon.com/s3/)
 > / [CloudFront](http://aws.amazon.com/cloudfront/) (via [Travis CI](https://travis-ci.org/)).
 
-#### Getting Started
+Demo: http://d3kks39dujnhya.cloudfront.net/
+#### Source
 
- 1. [Fork this repo](https://github.com/kriasoft/static-site-starter/fork) and rename it under your own GitHub account
- 2. Open it [GitHub for Mac](https://mac.github.com/)
-    (or [GitHub for Windows](https://windows.github.com/)) and start hacking
+https://github.com/kriasoft/static-site-starter
 
 #### Blogs & Articles
 
@@ -29,9 +28,6 @@ the build. Otherwise, you may deploy manually by running:
 ```
 > gulp deploy
 ```
-
-You just need to make sure that you set AWS_KEY, AWS_SECRET and AWS_BUCKET
-environment properties.
 
 #### Credits
 

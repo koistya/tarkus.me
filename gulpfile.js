@@ -15,7 +15,7 @@ var argv = require('minimist')(process.argv.slice(2));
 
 // Settings
 var DEST = './build';
-var GOOGLE_ANALYTICS_ID = 'UA-XXXXX-X';
+var GOOGLE_ANALYTICS_ID = 'UA-34918747-1';
 var AUTOPREFIXER_BROWSERS = [
     'ie >= 10',
     'ie_mob >= 10',
@@ -80,7 +80,7 @@ gulp.task('deploy', function () {
         "secret": process.env.AWS_SECRET,
         "bucket": process.env.AWS_BUCKET,
         "region": "us-standard",
-        "distributionId": "XXXXXXXX"
+        "distributionId": "E3MQXT6VNPNTWR"
     };
 
     // Create a new publisher
