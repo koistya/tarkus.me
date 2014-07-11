@@ -11,7 +11,7 @@ Demo: http://d3kks39dujnhya.cloudfront.net/
 
 https://github.com/kriasoft/static-site-starter
 
-#### Blog Posts & Articles
+#### Blogs & Articles
 
  - [Static website on S3, CloudFront and Route 53, the right way!](http://www.michaelgallego.fr/blog/2013/08/27/static-website-on-s3-cloudfront-and-route-53-the-right-way/)
 
