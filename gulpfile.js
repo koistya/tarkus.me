@@ -15,6 +15,7 @@ var argv = require('minimist')(process.argv.slice(2));
 
 // Settings
 var DEST = './build';
+var RELEASE = Boolean(argv.release);
 var GOOGLE_ANALYTICS_ID = 'UA-34918747-1';
 var AUTOPREFIXER_BROWSERS = [
     'ie >= 10',
@@ -45,12 +46,17 @@ gulp.task('fonts', function () {
 
 // HTML pages
 gulp.task('pages', function () {
-    return gulp.src('src/**/*.html')
-        .pipe($.htmlmin({
+    return gulp.src(['src/**/*.{hbs,html}', '!src/layouts/**', '!src/partials/**'])
+        .pipe($.if('*.hbs', $.assemble({
+            partials: 'src/partials/**/*.hbs',
+            layout: 'default.hbs',
+            layoutdir: 'src/layouts'
+        })))
+        .pipe(RELEASE ? $.htmlmin({
             removeComments: true,
             collapseWhitespace: true,
             minifyJS: true, minifyCSS: true
-        }))
+        }) : $.util.noop())
         .pipe($.replace('UA-XXXXX-X', GOOGLE_ANALYTICS_ID))
         .pipe(gulp.dest(DEST));
 });
@@ -61,7 +67,7 @@ gulp.task('styles', function () {
         .pipe($.less())
         .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
         .pipe($.csscomb())
-        .pipe($.cssmin())
+        .pipe(RELEASE ? $.cssmin() : $.util.noop())
         .pipe($.rename('style.css'))
         .pipe(gulp.dest(DEST + '/css'));
 });
@@ -78,8 +84,8 @@ gulp.task('deploy', function () {
     var aws = {
         "key": process.env.AWS_KEY,
         "secret": process.env.AWS_SECRET,
-        "bucket": process.env.AWS_BUCKET,
-        "region": "us-standard",
+        "bucket": 'tarkus.me',
+        "region": 'us-standard',
         "distributionId": "E3MQXT6VNPNTWR"
     };
 
@@ -99,7 +105,6 @@ gulp.task('deploy', function () {
                 /^\/browserconfig.xml$/g,
                 /^\/crossdomain.xml$/g,
                 /^\/error.html$/g,
-                /^\/favicon.ico$/g,
                 /^\/humans.txt$/g,
                 /^\/robots.txt$/g
             ]
