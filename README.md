@@ -5,7 +5,7 @@
 > [Assemble](http://assemble.io/), [Handlebars](http://handlebarsjs.com/); and
 > pre-configured for deployment to [Amazon S3](http://aws.amazon.com/s3/)
 > / [CloudFront](http://aws.amazon.com/cloudfront/)
-> ([CDN](http://en.wikipedia.org/wiki/Content_delivery_network) hosting)).
+> ([CDN](http://en.wikipedia.org/wiki/Content_delivery_network) hosting).
 
 Demo: http://d3kks39dujnhya.cloudfront.net/
 
@@ -13,9 +13,12 @@ Demo: http://d3kks39dujnhya.cloudfront.net/
 
 https://github.com/kriasoft/static-site-starter
 
-#### Documentation
+#### Questions & Answers
 
- * [FAQ](./docs/faq.md)
+* [How to deploy the site to GitHub Pages?](./docs/faq.md#how-to-deploy-the-site-to-github-pages)
+* [How to deploy the site via SCP?](./docs/faq.md#how-to-deploy-the-site-via-scp)
+* [How to securely store sensitive data in my public repository?](./docs/faq.md#how-to-securely-store-sensitive-data-in-my-public-repo)
+* [Read more...](./docs/faq.md)
 
 #### Blogs & Articles
 
@@ -25,8 +28,17 @@ https://github.com/kriasoft/static-site-starter
 #### How to Build
 
 ```
-> gulp build --release
+> gulp build    # or `gulp build --release`
 ```
+
+#### How to Run
+
+```
+> gulp          # or `gulp --release`
+```
+
+This command builds the project, launches [browser-sync](http://www.browsersync.io)
+development server and starts listening for modifications in source files.
 
 #### How to Deploy
 
